@@ -1,3 +1,4 @@
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
 void main() {
@@ -9,23 +10,7 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      title: 'Flutter Demo',
-      theme: ThemeData(
-        // This is the theme of your application.
-        //
-        // Try running your application with "flutter run". You'll see the
-        // application has a blue toolbar. Then, without quitting the app, try
-        // changing the primarySwatch below to Colors.green and then invoke
-        // "hot reload" (press "r" in the console where you ran "flutter run",
-        // or simply save your changes to "hot reload" in a Flutter IDE).
-        // Notice that the counter didn't reset back to zero; the application
-        // is not restarted.
-        primarySwatch: Colors.blue,
-        // This makes the visual density adapt to the platform that you run
-        // the app on. For desktop platforms, the controls will be smaller and
-        // closer together (more dense) than on mobile platforms.
-        visualDensity: VisualDensity.adaptivePlatformDensity,
-      ),
+      debugShowCheckedModeBanner: false,
       home: MyHomePage(),
     );
   }
@@ -47,7 +32,7 @@ class _MyHomePageState extends State<MyHomePage> {
         appBar: AppBar(
             backgroundColor: Colors.white,
             leading: Container(
-              margin: const EdgeInsets.all(5),
+              margin: const EdgeInsets.only(left: 10),
               decoration: BoxDecoration(
                   shape: BoxShape.circle,
                   image: DecorationImage(image: NetworkImage(userImageurl))),
@@ -70,36 +55,100 @@ class _MyHomePageState extends State<MyHomePage> {
               margin: EdgeInsets.only(top: 50),
               child: Row(
                 children: [
-                  Container(
-                    height: 35,
-                    width: 100,
-                    padding:
-                        EdgeInsets.only(top: 5, bottom: 5, left: 15, right: 15),
-                    decoration: BoxDecoration(color: Color(0xffe3e3e3)),
-                    child: Text('KOSPI'),
+                  GestureDetector(
+                    onTap: () {
+
+                    },
+                    child: Container(
+                      height: 35,
+                      width: 100,
+                      decoration: BoxDecoration(
+                          color: Color(0xffe3e3e3),
+                          borderRadius: BorderRadius.only(
+                              topLeft: Radius.circular(8),
+                              topRight: Radius.circular(8)),
+                          boxShadow: [
+                            BoxShadow(
+                              color: Colors.grey[500],
+                              offset: Offset(0, -3),
+                              blurRadius: 6.0,
+                            )
+                          ]),
+                      child: Center(
+                        child: Text(
+                          'KOSPI',
+                          style: TextStyle(fontFamily: 'RobotoSlab'),
+                        ),
+                      ),
+                    ),
                   ),
-                  Container(
-                    height: 35,
-                    width: 100,
-                    padding:
-                        EdgeInsets.only(top: 5, bottom: 5, left: 15, right: 15),
-                    decoration: BoxDecoration(color: Color(0xffe3e3e3)),
-                    child: Text('KOSDAQ'),
+                  GestureDetector(
+                    onTap: () {
+
+                    },
+                    child: Container(
+                      height: 35,
+                      width: 100,
+                      decoration: BoxDecoration(
+                          color: Color(0xffffffff),
+                          borderRadius: BorderRadius.only(
+                              topLeft: Radius.circular(8),
+                              topRight: Radius.circular(8)),
+                          boxShadow: [
+                            BoxShadow(
+                              color: Colors.grey[500],
+                              offset: Offset(0, -3),
+                              blurRadius: 6.0,
+                            )
+                          ]),
+                      child: Center(
+                        child: Text('KOSDAQ',
+                            style: TextStyle(fontFamily: 'RobotoSlab')),
+                      ),
+                    ),
                   ),
-                  Container(
-                    height: 35,
-                    width: 100,
-                    padding:
-                        EdgeInsets.only(top: 5, bottom: 5, left: 15, right: 15),
-                    decoration: BoxDecoration(color: Color(0xffe3e3e3)),
-                    child: Text('NASDAQ'),
+                  GestureDetector(
+                    onTap: () {
+                       
+                    },
+                    child: Container(
+                      height: 35,
+                      width: 100,
+                      decoration: BoxDecoration(
+                          color: Color(0xffffffff),
+                          borderRadius: BorderRadius.only(
+                              topLeft: Radius.circular(8),
+                              topRight: Radius.circular(8)),
+                          boxShadow: [
+                            BoxShadow(
+                              color: Colors.grey[500],
+                              offset: Offset(0, -3),
+                              blurRadius: 6.0,
+                            ),
+                          ]),
+                      child: Center(
+                        child: Text('NASDAQ',
+                            style: TextStyle(fontFamily: 'RobotoSlab')),
+                      ),
+                    ),
                   ),
                 ],
               ),
             ),
             Container(
               height: 200,
-              decoration: BoxDecoration(color: Color(0xffe3e3e3)),
+              decoration: BoxDecoration(
+                  color: Color(0xffe3e3e3),
+                  borderRadius: BorderRadius.only(
+                      bottomLeft: Radius.circular(15),
+                      bottomRight: Radius.circular(15)),
+                  boxShadow: [
+                    BoxShadow(
+                      color: Colors.grey[500],
+                      offset: Offset(0, 3),
+                      blurRadius: 6.0,
+                    ),
+                  ]),
             ),
             GestureDetector(
               onTap: () {},
@@ -108,10 +157,24 @@ class _MyHomePageState extends State<MyHomePage> {
                 width: 100,
                 height: 35,
                 decoration: BoxDecoration(
-                    color: Color(0xffe3e3e3),
-                    borderRadius: BorderRadius.all(
-                      Radius.circular(15),
-                    )),
+                  color: Color(0xffffffff),
+                  borderRadius: BorderRadius.all(
+                    Radius.circular(10),
+                  ),
+                  boxShadow: [
+                    BoxShadow(
+                      color: Colors.grey[500],
+                      offset: Offset(4.0, 4.0),
+                      blurRadius: 8.0,
+                    ),
+                    BoxShadow(
+                      color: Colors.white,
+                      offset: Offset(-4.0, -4.0),
+                      blurRadius: 15.0,
+                      spreadRadius: 1.0,
+                    ),
+                  ],
+                ),
                 child:
                     Center(child: Text('검색', style: TextStyle(fontSize: 18))),
               ),
